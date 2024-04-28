@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900" onload="init();" >
+    <div class="grid place-content-center mb-2"> 
+        <a href="index.html" class="mt-5 py-3 px-4 rounded-lg border-2 border-[#4ccdc742] hover:bg-[#4ccdc742] text-white font-bold">Volver a inicio</a>
+      </div> 
+    <div class="grid place-content-center mt-5">
+    <table class="m-0  p-5 bg-black w-96 h-full rounded-3xl grid place-content-center ">
+        <div class="grid place-content-center">
+        <tr >
+            <td><span class="grid place-content-center text-3xl place-content-center mb-12 leading-10 text-white  overflow-hidden rounded-3xl w-[350px] h-24 bg-[#141414] text-[#1a261a] font-bold" id="resultado"></span></td>
+        </tr>
+        
+        <tr class="grid grid-cols-4 gap-1">
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="uno">1</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased " id="dos">2</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="tres">3</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="division">/</button></td>
+        </tr>
+        <tr class="grid grid-cols-4 gap-1">
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="cuatro">4</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="cinco">5</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="seis">6</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="multiplicacion">*</button></td>
+        </tr>
+        <tr class="grid grid-cols-4 gap-1">
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="siete">7</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="ocho">8</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="nueve">9</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="resta">-</button></td>
+        </tr >
+        <tr class="grid grid-cols-4 gap-1">
+            <td><button class="grid place-content-center col-span-2 w-20 h-20 rounded-lg text-base text-white  border-2 border-[#4ccdc742] hover:bg-[#4ccdc742] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased " id="igual">=</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="reset">C</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="cero">0</button></td>
+            <td><button class="grid place-content-center  w-20 h-20 rounded-lg text-base text-white  bg-[#141414] rounded-[8px] cursor-pointer hover:bg-[#4ccdc742] font-semibold antialiased" id="suma">+</button></td>
+        </tr>
+    </div>
+        <tr>
+        
+        </tr>
+       
+    </table>
+    </div>
+</body>
+<script src="calculator.js"></script>
+</html>
