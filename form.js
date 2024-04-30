@@ -9,11 +9,11 @@ function rg(){
 //obteniendo datos del formulario
 const get_form = document.forms.numbers;
  
-const number = get_form.number;
+const number = document.getElementById('number');
  
-const number2 = get_form.number2;
+const number2 = document.getElementById('number2');
  
-const number3 = get_form.number3;
+const number3 = document.getElementById('number3');
  
 const result = document.getElementById('result');
 
