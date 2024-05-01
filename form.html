@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Encontrar el mayor de tres números</title>
 <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header class="font-bold mt-2">
   <nav class="grid place-content-center w-[92%] mx-auto">
@@ -36,13 +37,21 @@
   <input type="number" id="num3" name="num3" placeholder="Ingrese el numero..." class="border border-[#0A2913] py-3 px-4 rounded-lg  outline-none focus: ring-1  mb-4">
   </div>
   <div class="grid place-content-center">
-  <button type="button" onclick="encontrarMayor()" class="text-center bg-[#0A2913] hover:bg-[#42594C]  text-black text-white w-[150px]  text-blue py-2  rounded-lg font-semibold mt-2 place-content-center grid">Encontrar</button>
+  <button type="button" onclick="encontrarMayor(),rg()" class="text-center bg-[#0A2913] hover:bg-[#42594C]  text-black text-white w-[150px]  text-blue py-2  rounded-lg font-semibold mt-2 place-content-center grid">Encontrar</button>
   </div>
 </form>
   <p class="mt-5 mb-3 text-center text-white font-bold"  id="result"></p>
 </div>
     
     <script>
+function rg() {
+  Swal.fire({
+  title: "¡Buen trabajo!",
+  text: "¡Tu numéro mayor fue encontrado!",
+  icon: "success"
+});
+ }
+    
 function encontrarMayor() {
   // Obtener los valores de los tres números
   let num1 = parseFloat(document.getElementById("num1").value);
