@@ -26,6 +26,7 @@
   <button type="button" onclick="encontrarMayor()" class="text-center bg-[#0A2913] hover:bg-[#42594C]  text-black text-white w-[150px]  text-blue py-2  rounded-lg font-semibold mt-2 place-content-center grid">Encontrar</button>
   </div>
 </form>
+  <p class="mt-5 mb-3 text-center text-white font-bold"  id="result"></p>
 </div>
      <div class="grid place-content-center mb-5"> 
         <button onclick="window.location.reload()" class="mt-5 py-3 px-4 rounded-lg border-2 border-[#4ccdc742] hover:bg-[#4ccdc742] text-white font-bold">Recargar</button>
@@ -37,15 +38,17 @@
     <script>
 function encontrarMayor() {
   // Obtener los valores de los tres números
-  var num1 = parseFloat(document.getElementById("num1").value);
-  var num2 = parseFloat(document.getElementById("num2").value);
-  var num3 = parseFloat(document.getElementById("num3").value);
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  let num3 = parseFloat(document.getElementById("num3").value);
+  let result = document.getElementById("result");
 
   // Encontrar el mayor de los tres números usando Math.max()
-  var mayor = Math.max(num1, num2, num3);
+  let mayor = Math.max(num1, num2, num3);
 
   // Mostrar el resultado
-  alert("El número mayor es: " + mayor);
+  result.textContent = `El numero mayor es: ${mayor}`
+}
 }
 </script>
 
