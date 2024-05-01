@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+ 
+    <title>Ordenar Números</title>
+</head>
+<header class="font-bold mt-2">
+  <nav class="grid place-content-center w-[92%] mx-auto">
+    <ul class="flex items-center gap-[4vw] text black dark:text-white" >
+       <a href="index.html"><li class="hover:text-[#D7DBE4] relative after:bg-white after:absolute after:h-0.5 after:rounded-full after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300">Inicio</li></a>
+       <button onclick="window.location.reload()"><li class="hover:text-[#D7DBE4] relative after:bg-white after:absolute after:h-0.5 after:rounded-full after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300">Recargar</li></button>
+       
+    </ul> 
+    </nav>
+</header>
+ 
+<body class="bg-gray-900">
+    
+    <div class="grid place-content-center">
+        <form class=" w-96 py-8 px-6 bg-white rounded-xl max-w-sm mt-7 ">
+            <label class="mb-3" for="numerosInput">Numeros:</label>
+ 
+            <input type="text" id="numerosInput" placeholder="Numeros separados por comas"
+                class="border border-[#0A2913] py-3 px-4 rounded-lg  outline-none focus: ring-1 mt-3  mb-4 w-full">
+            <div class="grid place-content-center">
+                <button id="ordenarButton"
+                    class="text-center bg-[#0A2913] hover:bg-[#42594C]  text-black text-white w-[150px]  text-blue py-2  rounded-lg font-semibold mt-2 place-content-center grid">Ordenar</button>
+            </div>
+ 
+        </form>
+ 
+        <p class="text-center text-white font-bold mt-4" id="resultado"></p>
+ 
+        <script>
+            //Utilización del DOM para extraer los datos ingresados.
+            document.getElementById("ordenarButton").addEventListener("click", function (event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+ 
+                let numerosInput = document.getElementById("numerosInput").value;
+ 
+                let numeros = numerosInput.split(",").map(function (item) {
+ 
+                    return parseInt(item.trim());
+ 
+                });
+ 
+                let numerosOrdenados = ordenarNumeros(numeros);
+ 
+                document.getElementById("resultado").textContent = "Números ordenados: " + numerosOrdenados.join(", ");
+ 
+            });
+ 
+            //Logica para ordenar los numero del menor al mayor.
+            function ordenarNumeros(array) {
+ 
+                let longitud = array.length;
+ 
+                for (let i = 0; i < longitud - 1; i++) {
+ 
+                    for (let j = 0; j < longitud - 1 - i; j++) {
+ 
+                        if (array[j] > array[j + 1]) {
+ 
+                            let temp = array[j];
+ 
+                            array[j] = array[j + 1];
+ 
+                            array[j + 1] = temp;
+                        }
+                    }
+                }
+                return array;
+            }
+        </script>
+ 
+</body>
+ 
+</html>
