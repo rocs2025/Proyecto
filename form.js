@@ -16,7 +16,7 @@ function encontrarMayor() {
   let num3 = parseFloat(document.getElementById("number3").value);
 
   // Encontrar el mayor de los tres números usando Math.max()
-  let mayor = Math.max(number, number2, number3);
+  let mayor = Math.max(num1, num2, num3);
 
   // Mostrar el resultado
   alert("El número mayor es: " + mayor);
