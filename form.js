@@ -7,30 +7,20 @@ function rg(){
 
 
 //obteniendo datos del formulario
-const get_form = document.forms.numbers;
- 
-const number = document.getElementById('number');
- 
-const number2 = document.getElementById('number2');
- 
-const number3 = document.getElementById('number3');
- 
-const result = document.getElementById('result');
 
-/*función para crear un evento para detectar cuando se envie el formulario y luego
-hacer condiciones para identificar el numero mayor y devolverlo en una etiqueta parrafo*/
+ 
+function encontrarMayor() {
+  // Obtener los valores de los tres números
+  var num1 = parseFloat(document.getElementById("number").value);
+  var num2 = parseFloat(document.getElementById("number2").value);
+  var num3 = parseFloat(document.getElementById("number3").value);
 
-get_form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (number.value > number2.value && number.value > number3.value){
-        result.textContent = `${number.value} es el mayor`;
-     } else if(number2.value > number.value && number2.value > number3.value){
-      result.textContent = `${number2.value} es el mayor`;
-     } else if(number3.value > number && number3>number2){
-      result.textContent = `${number3.value} es el mayor`;
-     }
-     
-});
+  // Encontrar el mayor de los tres números usando Math.max()
+  var mayor = Math.max(number, number2, number3);
+
+  // Mostrar el resultado
+  alert("El número mayor es: " + mayor);
+}
 
 
 
